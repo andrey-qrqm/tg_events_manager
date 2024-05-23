@@ -38,7 +38,7 @@ def filter_records(records, date_field, comparison_date, border_date):
     filtered_records = []
     for record in records:
         record_date = datetime.strptime(record[date_field], "%d.%m.%Y")  # Adjust format as needed
-        if record_date >= comparison_date and record_date <= border_date:
+        if record_date >= comparison_date and record_date < border_date:
             filtered_records.append(record)
     return filtered_records
 
