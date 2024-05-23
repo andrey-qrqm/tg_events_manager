@@ -17,7 +17,7 @@ blocked_keys = [
 
 
 def reply_generator(n):
-    filtered_data = gs_test.filter_records(gs_test.all_records, 'Date', today, today + timedelta(days=int(n)))
+    filtered_data = gs_test.filter_records(gs_test.all_records, 'Date', today, today + timedelta(days=int(n) - 1))
     data = gs_test.sort_records(filtered_data)
     reply = ""
     message = ""
