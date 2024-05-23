@@ -21,7 +21,13 @@ def get_text_messages(message):
         EventsReply = reply_generator(7)
         bot.send_message(message.from_user.id, EventsReply)
     else:
-        bot.send_message(message.from_user.id, "hello world")
+        bot.send_message(message.from_user.id, """
+        This command does not exist.
+        Available commands:
+        event - Events for today
+        event 3 - Events for 3 days
+        event 7 - Events for a week
+        """)
 
 
 if __name__ == '__main__':
