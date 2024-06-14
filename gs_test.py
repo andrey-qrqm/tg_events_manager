@@ -62,4 +62,4 @@ sorted_records = sort_records(filtered_records)
 print(filtered_records)
 
 print(sorted_records)
-print(type(filtered_records[0]))
+#print(type(filtered_records[0]))
