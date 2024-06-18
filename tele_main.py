@@ -18,7 +18,7 @@ def get_text_messages(message):
             days = int(message.text[6:])
             EventsReply = reply_generator(days)
         except TypeError:
-            EventsReply = "This command is not correct, type help to seek some help"
+            EventsReply = "This command is not correct, type help to see correct commands"
         if EventsReply != "":
             bot.send_message(message.from_user.id, EventsReply)
         else:
