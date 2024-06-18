@@ -1,5 +1,6 @@
 import telebot
 
+import re
 from sys import argv
 from sort_Test import reply_generator
 
@@ -11,6 +12,19 @@ bot = telebot.TeleBot(token)
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     message.text = message.text.lower()
+    """
+    if message.text.startswith("event"): 
+        try:
+            days = int(message.text[6:])
+            EventsReply = reply_generator(days)
+        except TypeError:
+            EventsReply = "This command is not correct, type help to seek some help"
+        if EventsReply != "":
+            bot.send_message(message.from_user.id, EventsReply)
+        else:
+            EventsReply = "Currently there are no events at this date"
+            bot.send_message(message.from_user.id, EventsReply)
+       """
     if message.text == "event":
         EventsReply = reply_generator(1)
         if EventsReply != "":
