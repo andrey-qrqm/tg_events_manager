@@ -60,5 +60,4 @@ sorted_records = sort_records(filtered_records)
 
 # Print the filtered records
 print(filtered_records)
-
 print(sorted_records)

@@ -39,5 +39,4 @@ def reply_generator(n):
 
 
 reply = reply_generator(3)
-
 print(reply)
