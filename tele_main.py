@@ -18,43 +18,19 @@ def get_text_messages(message):
             days = int(message.text[6:])
             EventsReply = reply_generator(days)
         except ValueError:
-            EventsReply = "This command is not correct, type help to see correct commands"
+            EventsReply = reply_generator(1)
         if EventsReply != "":
             bot.send_message(message.from_user.id, EventsReply)
         else:
             EventsReply = "Currently there are no events at this date"
             bot.send_message(message.from_user.id, EventsReply)
-        """
-    if message.text == "event":
-        EventsReply = reply_generator(1)
-        if EventsReply != "":
-            bot.send_message(message.from_user.id, EventsReply)
-        else:
-            EventsReply = "Currently there are no events at this date"
-            bot.send_message(message.from_user.id, EventsReply)
-    elif message.text == "event 3":
-        EventsReply = reply_generator(3)
-        if EventsReply != "":
-            bot.send_message(message.from_user.id, EventsReply)
-        else:
-            EventsReply = "Currently there are no events at this date"
-            bot.send_message(message.from_user.id, EventsReply)
-    elif message.text == "event 7":
-        EventsReply = reply_generator(7)
-        if EventsReply != "":
-            bot.send_message(message.from_user.id, EventsReply)
-        else:
-            EventsReply = "Currently there are no events at this date"
-            bot.send_message(message.from_user.id, EventsReply)
+    elif message.text.startswith('help'):
+        EventsReply = """Command:
+event DAYS - see events in the next days (put your number instead of DAYS)"""
+        bot.send_message(message.from_user.id, EventsReply)
     else:
-        bot.send_message(message.from_user.id, 
-        This command does not exist.
-        Available commands:
-        event - Events for today
-        event 3 - Events for 3 days
-        event 7 - Events for a week
-        )
-"""
+        EventsReply = "I don't know this command, please type help to see list of commands"
+        bot.send_message(message.from_user.id, EventsReply)
 
 if __name__ == '__main__':
     bot.polling(none_stop=True, interval=5)
