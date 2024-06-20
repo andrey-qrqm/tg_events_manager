@@ -1,5 +1,4 @@
 import telebot
-
 import re
 from sys import argv
 from sort_Test import reply_generator
@@ -26,7 +25,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, EventsReply)
     elif message.text.startswith('help'):
         EventsReply = """Command:
-event DAYS - see events in the next days (put your number instead of DAYS)"""
+    event DAYS - see events in the next days (put your number instead of DAYS)"""
         bot.send_message(message.from_user.id, EventsReply)
     else:
         EventsReply = "I don't know this command, please type help to see list of commands"

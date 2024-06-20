@@ -46,8 +46,9 @@ def filter_records(records, date_field, comparison_date, border_date):
 def sort_records(filtered_records):
     sorted_records_by_time = sorted(filtered_records, key=get_time)
     sorted_records = sorted(sorted_records_by_time, key=get_date)
-
     return sorted_records
+
+
 # Define the field name that contains the date and the comparison date (today)
 date_field_name = 'Date'  # Adjust this to the name of your date field
 today = datetime.now()
@@ -55,11 +56,9 @@ today = datetime.now()
 # Filter the records
 filtered_records = filter_records(all_records, date_field_name, today, today + timedelta(days=3))
 
-
 sorted_records = sort_records(filtered_records)
 
 # Print the filtered records
 print(filtered_records)
 
 print(sorted_records)
-#print(type(filtered_records[0]))

@@ -21,11 +21,10 @@ def reply_generator(n):
     data = gs_test.sort_records(filtered_data)
     reply = ""
     message = ""
-    for event in data:
 
+    for event in data:
         message = "--------------------------------\n"
         message += f'{event["Date"]}: \n'
-
         message += f'{event["Event Name"]} by {event["Organiser"]} at {event["Time"]}: \n'
         message += f'Place - {event["Place"]}: \n'
         message += f'Topic - {event["Topic"]}: \n'
