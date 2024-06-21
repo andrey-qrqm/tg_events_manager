@@ -15,9 +15,11 @@ def get_text_messages(message):
     if message.text.startswith("event"): 
         try:
             days = int(message.text[6:])
+            # Take the num of days from the command (event DAYS)
             EventsReply = reply_generator(days)
         except ValueError:
             EventsReply = reply_generator(1)
+        # IF The response is not empty -> send a response
         if EventsReply != "":
             bot.send_message(message.from_user.id, EventsReply)
         else:
